@@ -15,6 +15,9 @@ app.use(bodyParser.json());
 
 app.use("/api/user",userroutes);
 app.use("/api/auth",authroutes);
+
+// ====================================== middleware ==================================================
+app.use
 app.listen(PORT,()=>{
     console.log(`server is running now at port ${PORT}`);
 });
