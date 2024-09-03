@@ -3,10 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css'
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formdata, setFormdata] = useState({});
-
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const naviagte=useNavigate();
   const handlechange = (e) => {
     setFormdata({
       ...formdata,
@@ -16,20 +19,33 @@ const Signup = () => {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/auth/signup", {
-      method: "POST",
-      headers: {
-        'Content-Type': "application/json",
-      },
-      body: JSON.stringify(formdata),
-    });
-    const data = await res.json();
-    console.log(data);
+    setLoading(true);
+    try{
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: {
+          'Content-Type': "application/json",
+        },
+        body: JSON.stringify(formdata),
+      });
+      const data = await res.json();
+      if (data.sucess === false) {
+        setError(data.message);
+        setLoading(false);
+      }
+      setLoading(false);
+      setError(null);
+      naviagte("/signin")
+      console.log(data);
+    }catch(error){
+      setLoading(false);
+      setError(error.message);
+    }
   }
 
   return (
     <>
-      <div className='box' style={{ width: "100vw", height: "90vh" }}>
+      <div className='box' style={{ width: "100vw", height: "90vh", marginBottom: "2px" }}>
         <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>Sign Up</h1>
         <Container fluid>
           <Form onSubmit={handlesubmit}>
@@ -65,8 +81,8 @@ const Signup = () => {
                     autoComplete="current-password"
                   />
                 </Form.Group>
-                <Button variant='secondary' type='submit' className='w-100'>
-                  SIGN UP
+                <Button variant='secondary' disabled={loading} type='submit' className='w-100'>
+                  {loading ? "Loading..." : "SIGN UP"}
                 </Button>
                 <Button variant='danger' type='button' className='w-100 mt-3'>
                   CONTINUE WITH GOOGLE
@@ -78,6 +94,7 @@ const Signup = () => {
             Have an account?<a href='/signin' className='p-2 text-decoration-none'>Sign in</a>
           </p>
         </Container>
+        {error && <p className='text-danger text-center mt-4'>{error}</p>}
       </div>
     </>
   )
