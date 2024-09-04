@@ -4,12 +4,12 @@ import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
-
+import image from '../assets/image-1.jpeg';
 const Signup = () => {
   const [formdata, setFormdata] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const naviagte=useNavigate();
+  const naviagte = useNavigate();
   const handlechange = (e) => {
     setFormdata({
       ...formdata,
@@ -20,7 +20,7 @@ const Signup = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try{
+    try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
@@ -37,7 +37,7 @@ const Signup = () => {
       setError(null);
       naviagte("/signin")
       console.log(data);
-    }catch(error){
+    } catch (error) {
       setLoading(false);
       setError(error.message);
     }
@@ -45,7 +45,14 @@ const Signup = () => {
 
   return (
     <>
-      <div className='box' style={{ width: "100vw", height: "90vh", marginBottom: "2px" }}>
+      <div className='box' style={{
+        width: "100vw",
+        height: "90vh",
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}>
         <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>Sign Up</h1>
         <Container fluid>
           <Form onSubmit={handlesubmit}>
@@ -87,12 +94,14 @@ const Signup = () => {
                 <Button variant='danger' type='button' className='w-100 mt-3'>
                   CONTINUE WITH GOOGLE
                 </Button>
+                <div>
+                  <p className='mt-3'>
+                    Have an account?<a href='/signin' className='p-2 text-decoration-none'>Sign in</a>
+                  </p>
+                </div>
               </Col>
             </Row>
           </Form>
-          <p className='text-center mt-3' style={{ fontWeight: "bold" }}>
-            Have an account?<a href='/signin' className='p-2 text-decoration-none'>Sign in</a>
-          </p>
         </Container>
         {error && <p className='text-danger text-center mt-4'>{error}</p>}
       </div>
