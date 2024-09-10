@@ -26,6 +26,7 @@ const Signin = () => {
         },
         body: JSON.stringify(formdata),
       });
+      
       const data = res.json();
       if (data.sucess === false) {
         setError(data.message);

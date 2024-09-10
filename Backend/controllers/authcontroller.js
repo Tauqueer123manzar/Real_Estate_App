@@ -1,6 +1,6 @@
-const catchAsyncErrors = require("../middleware/CatchAsyncmiddleware");
-const ErrorHandler=require("../middleware/errormiddleware")
-const User=require("../models/signin");
+const ErrorHandler=require("../middleware/errormiddleware");
+const catchAsyncErrors=require("../middleware/CatchAsyncmiddleware");
+const User=require("../models/Signup");
 const bodyParser=require("body-parser");
 
 const signup=catchAsyncErrors(async(req,res,next)=>{

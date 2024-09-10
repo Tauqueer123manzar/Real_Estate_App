@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
-import '../App.css'
 import { useNavigate } from 'react-router-dom';
-import image from '../assets/image-1.jpeg';
+import image from '../assets/signup1.jpg';
+import '../App.css'
 const Signup = () => {
   const [formdata, setFormdata] = useState({});
   const [error, setError] = useState(null);
@@ -48,10 +48,11 @@ const Signup = () => {
       <div className='box' style={{
         width: "100vw",
         height: "90vh",
-        backgroundImage: `url(${image})`,
+        // backgroundImage: `url(${image})`,
+        backgroundColor:'lightcyan',
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       }}>
         <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>Sign Up</h1>
         <Container fluid>
@@ -95,7 +96,7 @@ const Signup = () => {
                   CONTINUE WITH GOOGLE
                 </Button>
                 <div>
-                  <p className='mt-3'>
+                  <p className='mt-3 text-dark'>
                     Have an account?<a href='/signin' className='p-2 text-decoration-none'>Sign in</a>
                   </p>
                 </div>
