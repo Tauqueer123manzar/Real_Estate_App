@@ -45,7 +45,7 @@ const Signin = () => {
     <>
       <div className='box'
         style={{
-          width: "100vw",
+          maxWidth: "100vw",
           height: "90vh",
           backgroundImage: `url(${image2})`,
           backgroundSize: "cover",

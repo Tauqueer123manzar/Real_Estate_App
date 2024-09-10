@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import image from '../assets/signup1.jpg';
 import '../App.css'
+
 const Signup = () => {
   const [formdata, setFormdata] = useState({});
   const [error, setError] = useState(null);
@@ -28,25 +28,34 @@ const Signup = () => {
         },
         body: JSON.stringify(formdata),
       });
+
+      if(!res.ok){
+        const errorData= await res.json();
+        setError(errorData.message || "something went wrong");
+        setLoading(false);
+        return;
+      }
+
       const data = await res.json();
-      if (data.sucess === false) {
-        setError(data.message);
+      if (data.success === false) {
+        setError(data.message || "Please provide valid data");
         setLoading(false);
       }
+
       setLoading(false);
       setError(null);
       naviagte("/signin")
       console.log(data);
     } catch (error) {
       setLoading(false);
-      setError(error.message);
+      setError(error.message || "Already Registered");
     }
   }
 
   return (
     <>
       <div className='box' style={{
-        width: "100vw",
+        maxWidth: "100vw",
         height: "90vh",
         // backgroundImage: `url(${image})`,
         backgroundColor:'lightcyan',
