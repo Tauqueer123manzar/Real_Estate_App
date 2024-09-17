@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { Navigate, useNavigate } from 'react-router-dom';
 import '../App.css'
 import image2 from '../assets/image-2.jpg';
+import Footer from '../components/Footer';
 const Signin = () => {
   const [formdata, setFormdata] = useState({});
   const [error, setError] = useState(null);
@@ -50,7 +51,7 @@ const Signin = () => {
           backgroundImage: `url(${image2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
+          backgroundRepeat: "no-repeat",
         }}>
         <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>Sign In</h1>
         <Container fluid>
@@ -89,6 +90,7 @@ const Signin = () => {
           </Form>
         </Container>
       </div>
+      <Footer/>
     </>
   )
 }

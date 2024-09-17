@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
+import Footer from '../components/Footer';
 
 const Signup = () => {
   const [formdata, setFormdata] = useState({});
@@ -115,6 +116,7 @@ const Signup = () => {
         </Container>
         {error && <p className='text-danger text-center mt-4'>{error}</p>}
       </div>
+      <Footer/>
     </>
   )
 }

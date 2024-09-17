@@ -31,8 +31,10 @@ const Header = () => {
                 style={{ maxHeight: '100%', maxWidth:"100%",textAlign:"center"}}
                 navbarScroll
               >
-                <Nav.Link href="/" style={{fontSize:"18px"}}>Home</Nav.Link>
-                <Nav.Link href="/about" style={{fontSize:"18px"}}>About</Nav.Link>
+                <Nav.Link href="/" style={{fontSize:"18px",fontWeight:"500"}}>Home</Nav.Link>
+                <Nav.Link href="/about" style={{fontSize:"18px",fontWeight:"500"}}>About</Nav.Link>
+                <Nav.Link href='/service' style={{fontSize:"18px",fontWeight:"500"}}>Service</Nav.Link>
+                <Nav.Link href='/testimonial' style={{fontSize:"18px",fontWeight:"500"}}>Testimonial</Nav.Link>
                 <Nav.Link href="/signin" style={{fontSize:"18px",fontWeight:"bold"}}>Signin</Nav.Link>
               </Nav>
             </Navbar.Collapse>
