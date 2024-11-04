@@ -7,7 +7,7 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Service from './pages/Service';
-import Testimonial from './pages/Testimonial';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/about' element={<About />} />
           <Route path='/service' element={<Service/>}/>
-          <Route path='/testimonial' element={<Testimonial/>}/>
+          <Route path='/contact' element={<Contact/>}/>
           <Route path='/profile' element={<Profile />} />
         </Routes>
       </BrowserRouter>

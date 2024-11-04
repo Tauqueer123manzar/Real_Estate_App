@@ -6,3 +6,54 @@
     left: 0;
     z-index: 5;
 }
+.home:hover{
+    border-bottom: 1.5px solid orange;
+}
+.about:hover{
+    border-bottom: 1.5px solid orange;
+}
+.service:hover{
+    border-bottom: 1.5px solid orange;
+}
+.contact:hover{
+    border-bottom: 1.5px solid orange;
+}
+.signin:hover{
+    border-bottom: 1.5px solid orange;
+}
+
+.value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  .value-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .icon-container img {
+    transition: transform 0.3s ease;
+  }
+  
+  .value-card:hover .icon-container img {
+    transform: rotate(10deg) scale(1.1);
+  }
+  
+  .value-title {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .value-description {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  .card-container{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-container:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }

@@ -59,7 +59,7 @@ const Signup = () => {
         maxWidth: "100vw",
         height: "90vh",
         // backgroundImage: `url(${image})`,
-        backgroundColor:'lightcyan',
+        backgroundColor:'lightskyblue',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
