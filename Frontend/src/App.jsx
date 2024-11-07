@@ -8,6 +8,8 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import Service from './pages/Service';
 import Contact from './pages/Contact';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/profile' element={<Profile />} />
         </Routes>
+        <ToastContainer position="top-center"/>
       </BrowserRouter>
     </div>
   );

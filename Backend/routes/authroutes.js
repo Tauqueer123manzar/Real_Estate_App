@@ -1,7 +1,8 @@
-const express=require("express");
-const signup=require("../controllers/authcontroller");
-const router=express.Router();
+const express = require("express");
+const { signup, signin } = require("../controllers/authcontroller"); // Destructure signup aur signin
+const router = express.Router();
 
-router.post("/signup",signup);
+router.post("/signup", signup);
+router.post("/signin", signin);
 
-module.exports=router;
+module.exports = router;

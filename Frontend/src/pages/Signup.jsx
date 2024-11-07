@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import '../App.css'
 import Footer from '../components/Footer';
 
@@ -43,12 +44,13 @@ const Signup = () => {
         setLoading(false);
       }
 
+      toast.success(data.message || "User Registered Successfully");
       setLoading(false);
       setError(null);
       naviagte("/signin")
-      console.log(data);
     } catch (error) {
       setLoading(false);
+      toast.error(error.message);
       setError(error.message || "Already Registered");
     }
   }

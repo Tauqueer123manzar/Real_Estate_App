@@ -1,50 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { Navigate, useNavigate } from 'react-router-dom';
-import '../App.css'
+import '../App.css';
 import image2 from '../assets/image-2.jpg';
 import Footer from '../components/Footer';
+import { toast } from 'react-toastify';
+
 const Signin = () => {
   const [formdata, setFormdata] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handlechange = (e) => {
     setFormdata({
       ...formdata,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
   };
 
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null); 
+
     try {
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formdata),
       });
-      
-      const data = res.json();
-      if (data.sucess === false) {
-        setError(data.message);
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        setError(errorData.message || "Something went wrong!");
         setLoading(false);
+        return;
       }
-      setLoading(false);
-      setError(null);
-      Navigate("/signup");
-      console.log(data);
+
+      const data = await res.json();
+      toast.success(data.message);
+      if (data.success) {
+        navigate("/");
+      }
     } catch (error) {
       setLoading(false);
-      setError(error.message);
+      toast.error(data.message);
+      setError("Failed to sign in. Please try again later.");
+      console.error(error);
     }
-  }
+  };
+
   return (
     <>
-      <div className='box'
+      <div
+        className='box'
         style={{
           maxWidth: "100vw",
           height: "90vh",
@@ -52,8 +64,11 @@ const Signin = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-        }}>
-        <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>Sign In</h1>
+        }}
+      >
+        <h1 className='text-center p-5' style={{ fontSize: "30px", fontWeight: "bold" }}>
+          Sign In
+        </h1>
         <Container fluid>
           <Form onSubmit={handlesubmit}>
             <Row className='d-flex justify-content-center'>
@@ -69,7 +84,7 @@ const Signin = () => {
                   />
                 </Form.Group>
 
-                <Form.Group className='mb-4' controlId='email'>
+                <Form.Group className='mb-4' controlId='password'>
                   <Form.Control
                     required
                     placeholder='Password'
@@ -90,9 +105,9 @@ const Signin = () => {
           </Form>
         </Container>
       </div>
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Signin
+export default Signin;
