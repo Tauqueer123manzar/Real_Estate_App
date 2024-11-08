@@ -12,7 +12,7 @@ const Footer = () => {
                 <h1 className='m-2' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "40px", color: "orange" }}>RealEstate</h1>
                 <Row className='p-2'>
                     <Col xs={12} md={4} lg={3}>
-                        <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>About Foody</p>
+                        <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>Real Estate</p>
                         <li style={{ listStyle: "none", padding: "5px" }}>
                             <a href='/' style={{ textDecoration: "none", color: "black" }}>Home</a>
                         </li>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <a href='/contact' style={{ textDecoration: "none", color: "black" }}>Contact</a>
                         </li>
                         <li style={{ listStyle: "none", padding: "5px" }}>
-                            <a href='terms' style={{ textDecoration: "none", color: "black" }}>Terms & Policy</a>
+                            <a href='/signin' style={{ textDecoration: "none", color: "black" }}>Signin</a>
                         </li>
                     </Col>
 
@@ -34,7 +34,7 @@ const Footer = () => {
                     <Col xs={12} md={4} lg={3}>
                         <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>Help Us</p>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Feedback</li>
-                        <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Suggest a Restaurant</li>
+                        <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Suggest a Feature</li>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Report an Issue</li>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Privacy & Safety</li>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>FAQ</li>
@@ -42,7 +42,7 @@ const Footer = () => {
 
                     {/* ============================================================================================ */}
                     <Col xs={12} md={4} lg={3}>
-                        <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>For Resturants</p>
+                        <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>For Business</p>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Partner With Us</li>
                         <li style={{ textDecoration: "none", listStyle: "none", padding: "5px" }}>Apps For You</li>
                     </Col>
@@ -65,7 +65,7 @@ const Footer = () => {
                 </Row>
                 <footer className="text-center mt-3">
                     <hr style={{ margin: 0, padding: 0, borderBottom: "1px solid black" }} />
-                    <p style={{ margin: 10, padding: "0 0" }}> © {new Date().getFullYear()} Created by Md Tauqueer Manzar . All rights reserved.</p>
+                    <p style={{ margin: 10, padding: "0 0" }}> © {new Date().getFullYear()} Created by Shagufta Team. All rights reserved.</p>
                 </footer>
             </Container>
         </>

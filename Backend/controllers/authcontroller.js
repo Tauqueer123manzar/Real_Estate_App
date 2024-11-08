@@ -1,7 +1,7 @@
-const ErrorHandler=require("../middleware/errormiddleware");
 const catchAsyncErrors=require("../middleware/CatchAsyncmiddleware");
 const User=require("../models/Userschema");
 const bodyParser=require("body-parser");
+const ErrorHandler=require("../middleware/Errorhandler");
 
 module.exports.signup=catchAsyncErrors(async(req,res,next)=>{
     const{username,email,password}=req.body;
