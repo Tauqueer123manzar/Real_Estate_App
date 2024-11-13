@@ -1,17 +1,17 @@
 import React from 'react'
-import { Container,Row,Col,Card} from 'react-bootstrap'
+import { Container,Row,Col,Card, Button} from 'react-bootstrap'
 import image2 from '../assets/real-estate.jpg'
 import Footer from '../components/Footer'
+import Testimonial from '../components/Testimonial';
 import 'animate.css';
 import '../App.css'
-import Testimonial from '../components/Testimonial';
 const Home = () => {
   const valuesData = [
   {
     id: 1,
     title: 'Integrity',
     description: 'We uphold honesty and transparency in every aspect of our business.',
-    image:"https://cdn-icons-png.flaticon.com/128/10692/10692681.png"
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq9pvnL9MI-KBaZ1xL76mzYoMCIv31LPSJaw&s"
   },
   {
     id: 2,
@@ -53,6 +53,7 @@ const Home = () => {
               Our platform offers powerful search tools to help you quickly find properties
                that meet your criteria. From location and price to amenities and nearby attractions.
             </p>
+            <Button variant='primary' style={{fontSize:"25px",fontFamily:"initial",fontWeight:"bold",borderRadius:"10px",marginLeft:"45px"}} href='/listing'>Let's get Started</Button>
         </Col>
       </Row>
     </Container>

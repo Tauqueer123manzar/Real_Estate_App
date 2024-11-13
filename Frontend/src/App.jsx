@@ -10,6 +10,7 @@ import Service from './pages/Service';
 import Contact from './pages/Contact';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Listing from './pages/Listing';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/service' element={<Service/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/profile' element={<Profile />} />
+          <Route path='/listing' element={<Listing/>}/>
         </Routes>
         <ToastContainer position="top-center"/>
       </BrowserRouter>
