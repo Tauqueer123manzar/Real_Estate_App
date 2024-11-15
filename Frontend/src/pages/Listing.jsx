@@ -23,7 +23,33 @@ const Listing = () => {
       bathrooms: 5,
       image:residency1
     },
-    // Add more listings as needed
+    {
+      title: 'Pearl Gardens',
+      location: '222, Blossom Street, Nuwara Eliya',
+      description: 'Nestled in the hills of Nuwara Eliya, Pearl Gardens offers a picturesque escape.',
+      price: 'LKR 38175000',
+      bedrooms: 10,
+      bathrooms: 5,
+      image:residency1
+    },
+    {
+      title: 'Pearl Gardens',
+      location: '222, Blossom Street, Nuwara Eliya',
+      description: 'Nestled in the hills of Nuwara Eliya, Pearl Gardens offers a picturesque escape.',
+      price: 'LKR 38175000',
+      bedrooms: 10,
+      bathrooms: 5,
+      image:residency1
+    },
+    {
+      title: 'Pearl Gardens',
+      location: '222, Blossom Street, Nuwara Eliya',
+      description: 'Nestled in the hills of Nuwara Eliya, Pearl Gardens offers a picturesque escape.',
+      price: 'LKR 38175000',
+      bedrooms: 10,
+      bathrooms: 5,
+      image:residency1
+    },
   ];
 
   return (
@@ -59,8 +85,8 @@ const Listing = () => {
           <Row>
             {listings.map((listing, index) => (
               <Col md={6} key={index}>
-                <Card className="mb-4 shadow-sm" style={{ borderRadius: '10px' }}>
-                  <Card.Img variant="top" src={listing.image} width={"200px"} height={"300px"} style={{overflowX:"hidden",overflowY:"hidden"}}/>
+                <Card className="mb-4 shadow-sm" style={{ borderRadius: '10px',width:"400px",height:"450px" }}>
+                  <Card.Img variant="top" src={listing.image} style={{overflowX:"hidden",overflowY:"hidden"}}/>
                   <Card.Body>
                     <Card.Title>{listing.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{listing.location}</Card.Subtitle>
